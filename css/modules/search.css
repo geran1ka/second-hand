@@ -1,0 +1,26 @@
+.search {
+  display: flex;
+  align-items: center;
+  height: 46px;
+}
+
+.search__input {
+  display: none;
+}
+
+.search__btn {
+  display: block;
+  border-radius: 20px;
+  width: 70px;
+  height: 100%;
+  background-color: var(--light);
+  border: none;
+}
+
+.search__svg {
+  margin: 0 auto;
+}
+
+.search__close {
+  display: none;
+}

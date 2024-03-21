@@ -1,3 +1,6 @@
-@import "./normalize.css";
-@import "./fonts.css";
-@import "./style.css";
+@import "normalize.css";
+@import "fonts.css";
+@import "style.css";
+@import "modules/header.css";
+@import "modules/navigation.css";
+@import "modules/search.css";
