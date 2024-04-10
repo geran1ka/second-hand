@@ -33,16 +33,46 @@
 /* ToDo stop video 55:41 */
 
 .header__btn {
+  display: block;
+  width: 26px;
+  height: 24px;
+  background-color: transparent;
+  border: none;
 }
 
 .header__btn_cart {
-  border: none;
 }
 
 .header__btn_favorite {
 }
 
 .header__btn_person {
+}
+
+@media (max-width: 760px) {
+  .header__container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: min-content min-content;
+    grid-template-areas: "logo navigation" "search search";
+  }
+
+  .header__logo {
+    grid-area: logo;
+  }
+
+  .header__navigation {
+    grid-area: navigation;
+    justify-self: end;
+  }
+
+  .header__search {
+    grid-area: search;
+  }
+
+  .header__control-list {
+    display: none;
+  }
 }
 
 @media (max-width: 1000px) {
