@@ -55,6 +55,7 @@
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: min-content min-content;
     grid-template-areas: "logo navigation" "search search";
+    gap: 30px;
   }
 
   .header__logo {

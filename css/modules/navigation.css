@@ -26,7 +26,15 @@
   line-height: calc(22 / 18);
 }
 
+.navigation__control {
+  display: none;
+}
+
 @media (max-width: 1000px) {
+  .navigation {
+    position: relative;
+    padding: 0 10px;
+  }
   .navigation__btn {
     display: flex;
     align-items: center;
@@ -50,12 +58,67 @@
 
   .navigation__list {
     position: absolute;
+    min-width: 100%;
+    top: 46px;
+    left: 0;
     height: 0;
     overflow: hidden;
+    flex-direction: column;
+    gap: 15px;
+    padding: 0 10px;
+    background-color: #ffffff;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: calc(17 / 14);
+    align-items: start;
+  }
+
+  .navigation_active .navigation__btn::after {
+    transform: rotate(180deg);
+  }
+
+  .navigation_active .navigation__list {
+    height: auto;
+    padding-bottom: 13px;
   }
 }
 
 @media (max-width: 760px) {
+  .navigation {
+    position: static;
+  }
+
+  .navigation__mobile-wrapper {
+    position: absolute;
+    display: none;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    background-color: #fff;
+    padding: 20px 94px;
+  }
+
+  .navigation_active .navigation__mobile-wrapper {
+    display: block;
+  }
+
+  .navigation__list {
+    position: static;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 30px;
+  }
+
+  .navigation__control {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .navigation__control {
+    display: flex;
+  }
+
   .navigation__btn {
     font-size: 0;
     position: relative;
@@ -94,17 +157,29 @@
     top: 0;
   }
 
-  .navigation__btn_active::after {
+  .navigation_active .navigation__btn::after {
     top: 50%;
     transform: rotate(-45deg);
   }
 
-  .navigation__btn_active::before {
+  .navigation_active .navigation__btn::before {
     top: 50%;
     transform: rotate(45deg);
   }
 
-  .navigation__btn_active .navigation__btn_line {
+  .navigation_active .navigation__btn .navigation__btn_line {
     transform: translateY(-50%) scale(0);
+  }
+}
+
+@media (max-width: 580px) {
+  .navigation__list {
+    flex-wrap: wrap;
+  }
+  .navigation__item {
+    font-size: 14px;
+  }
+  .navigation__mobile-wrapper {
+    padding: 20px;
   }
 }
