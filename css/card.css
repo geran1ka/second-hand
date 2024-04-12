@@ -1,0 +1,152 @@
+.card {
+  position: relative;
+}
+
+.card__img {
+  width: 280px;
+  height: 330px;
+  object-fit: cover;
+  object-position: top;
+  margin-bottom: 11px;
+}
+
+.card__favorite-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: var(--white);
+  opacity: 1;
+  outline: none;
+  background-color: transparent;
+  border: none;
+
+  transition: color 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.card__favorite-btn:focus {
+  color: var(--pink);
+  opacity: 0.75;
+}
+
+.card__favorite-btn:hover {
+  color: var(--pink);
+  opacity: 0.5;
+}
+
+.card__favorite-btn:active {
+  color: var(--pink);
+}
+
+.card__control-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 115px;
+  gap: 9px;
+}
+
+.card__title {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: calc(22 / 18);
+}
+
+.card__to-cart {
+  padding: 8px;
+  font-size: 14px;
+  line-height: calc(17 / 14);
+  font-weight: 500;
+  color: var(--white);
+  border: 1px solid transparent;
+  background-color: var(--main-color);
+  transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out,
+    border-color 0.3s ease-in-out;
+}
+
+.card__to-cart:hover {
+  background-color: #464343;
+}
+
+.card__to-cart:active {
+  color: var(--main-color);
+  background-color: var(--white);
+  border-color: var(--main-color);
+}
+
+.card__to-cart:focus {
+  color: var(--main-color);
+  background-color: var(--light);
+  border-color: var(--main-color);
+}
+
+.card__price {
+  font-size: 18px;
+  line-height: calc(22 / 18);
+  font-weight: 500;
+}
+
+.card__old-price {
+  position: relative;
+  font-size: 14px;
+  line-height: calc(17 / 14);
+}
+
+.card__old-price::after {
+  content: "";
+  position: absolute;
+  display: block;
+  height: 1px;
+  width: 100%;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: var(--pink);
+  transform: rotate(-4.34deg);
+}
+
+.card__description {
+  width: min-content;
+  margin: auto;
+  position: relative;
+  border: none;
+  background-color: transparent;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: calc(17 / 14);
+  outline: none;
+
+  transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+.card__description::after {
+  content: "";
+  position: absolute;
+  display: block;
+  height: 1px;
+  width: 100%;
+  left: 0;
+  bottom: 2px;
+  background-color: var(--main-color);
+}
+
+.card__description:focus {
+  color: #6c6767;
+}
+
+.card__description:focus::after {
+  background-color: #6c6767;
+}
+
+.card__description:hover {
+  color: #464343;
+}
+
+.card__description:hover::after {
+  background-color: #464343;
+}
+
+.card__description:active {
+  color: var(--main-color);
+}
+
+.card__description:active::after {
+  background-color: transparent;
+}
