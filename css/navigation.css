@@ -18,9 +18,34 @@
 }
 
 .navigation__link {
+  position: relative;
   font-weight: 300;
   font-size: 18px;
   line-height: calc(22 / 18);
+  outline: none;
+
+  transition: opacity 0.3s ease-in-out;
+}
+
+.navigation__link::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  height: 1px;
+  width: 100%;
+  background-color: transparent;
+
+  transition: background-color 0.3s ease-in-out;
+}
+
+.navigation__link:hover {
+  opacity: 0.5;
+}
+
+.navigation__link:active::after,
+.navigation__link:focus::after {
+  background-color: var(--main-color);
 }
 
 .navigation__control {

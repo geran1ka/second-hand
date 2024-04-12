@@ -10,6 +10,7 @@
 }
 
 .header__logo {
+  outline-offset: 4px;
 }
 
 .header__logo-img {
@@ -30,14 +31,22 @@
 .header__control-item {
   line-height: 0;
 }
-/* ToDo stop video 55:41 */
-
 .header__btn {
   display: block;
   width: 26px;
   height: 24px;
   background-color: transparent;
   border: none;
+  transition: opacity 0.3s ease-in-out;
+  outline-offset: 4px;
+}
+
+.header__btn:hover {
+  opacity: 0.5;
+}
+
+.header__btn svg {
+  margin: 0 auto;
 }
 
 .header__btn_cart {
