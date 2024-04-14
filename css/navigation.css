@@ -103,6 +103,10 @@
     height: auto;
     padding-bottom: 13px;
   }
+
+  .navigation__link::after {
+    content: none;
+  }
 }
 
 @media (max-width: 760px) {
