@@ -1,12 +1,14 @@
 import Swiper from "https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs";
 
 export const slider = ({
+  selectorParentSlider,
   selectorSlider,
   selectorPagination,
   bulletClass,
   bulletActiveClass,
 }) => {
-  new Swiper(selectorSlider, {
+  const swiper = new Swiper(selectorSlider, {
+    init: false,
     autoplay: {
       delay: 2500,
       disableOnInteraction: false,
@@ -30,4 +32,18 @@ export const slider = ({
       },
     },
   });
+
+  const checkSlider = () => {
+    const href = location.href;
+
+    if (href.includes("?")) {
+      swiper.disable();
+      document.querySelector(selectorParentSlider)?.remove();
+    } else {
+      swiper.init();
+    }
+  };
+
+  checkSlider();
+  return checkSlider;
 };
