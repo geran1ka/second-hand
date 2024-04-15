@@ -1,4 +1,4 @@
-const URL_API = "http://localhost:3000";
+export const URL_API = "http://localhost:3000";
 const URL_POSTFIX = "/api/goods";
 
 const getGoods = (query = "") =>
@@ -11,6 +11,7 @@ const getGoods = (query = "") =>
     })
     .catch((err) => console.error(err));
 
-export const serviceGoods = async (fn, query) => {
+export const serviceGoods = async (fn, query, cb) => {
   fn(await getGoods(query));
+  if (cb) cb();
 };

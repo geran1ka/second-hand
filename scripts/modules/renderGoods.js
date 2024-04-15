@@ -1,4 +1,4 @@
-import { serviceGoods } from "../service/servisGoods.js";
+import { URL_API, serviceGoods } from "../service/servisGoods.js";
 
 const createCard = ({ id, title, image, price, discountPrice }) => {
   const li = document.createElement("li");
@@ -44,9 +44,9 @@ const renderCards = (parent) => {
   };
 };
 
-export const renderGoods = (query) => {
+export const renderGoods = (query, cb) => {
   const list = document.querySelector(".goods__list");
   list.textContent = "";
 
-  serviceGoods(renderCards(list), query);
+  serviceGoods(renderCards(list), query, cb);
 };

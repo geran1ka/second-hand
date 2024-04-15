@@ -1,6 +1,6 @@
 import { renderGoods } from "./renderGoods.js";
 
-const handlerClick = (e) => {
+const handlerClick = (e, cb) => {
   const target = e.target.closest("a");
 
   if (target) {
@@ -12,11 +12,22 @@ const handlerClick = (e) => {
         href.substring(1),
         `${location.pathname}${href}`
       );
+      if (cb) cb();
       renderGoods(href);
     }
   }
 };
 
-export const interceptLink = () => {
-  document.body.addEventListener("click", handlerClick);
+export const interceptLink = (cb) => {
+  document.body.addEventListener("click", (e) => {
+    handlerClick(e, cb);
+  });
+
+  window.addEventListener("popstate", (e) => {
+    if (e.state) {
+      renderGoods(`?${e.state}`);
+    } else {
+      renderGoods();
+    }
+  });
 };

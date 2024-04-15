@@ -28,13 +28,15 @@ selectControl({
 });
 
 const checkSlider = slider({
-  selectorParentSlider: "hero",
+  selectorParentSlider: ".hero",
   selectorSlider: ".hero__slider",
   selectorPagination: ".hero__slider-pagination",
   bulletClass: "hero__slider-line",
   bulletActiveClass: "hero__slider-line_active",
 });
 
-renderGoods(location.search);
-interceptLink();
+renderGoods(location.search, () => {
+  document.body.style.opacity = "1";
+});
+interceptLink(checkSlider);
 // document.addEventListener("click", (e) => e.preventDefault());
