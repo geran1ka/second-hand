@@ -1,0 +1,13 @@
+.overlay {
+  display: flex;
+  align-items: start;
+  justify-content: center;
+
+  position: fixed;
+  inset: 0;
+  background: rgba(27, 26, 27, 0.7);
+  overflow-y: auto;
+}
+
+.overlay__modal {
+}

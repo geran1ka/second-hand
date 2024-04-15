@@ -17,7 +17,7 @@
   transform-origin: right;
   background-color: var(--light);
   border-radius: 20px 0 0 20px;
-  transition: transform 0.3s ease-in-out 0.2s;
+  transition: transform 0.4s ease-in-out;
 }
 
 .search__btn {
@@ -40,10 +40,12 @@
 .search_active .search__input {
   transform: scaleX(1);
   padding: 14px 30px;
+  transition: transform 0.4s ease-in-out 0.2s;
 }
 
 .search_active .search__btn {
   border-radius: 0 20px 20px 0;
+  transition: border-radius 0.2s ease-in-out, background-color 0.24s ease;
 }
 
 .search__svg {
@@ -82,5 +84,9 @@
 
   .search__btn {
     border-radius: 0 12px 12px 0;
+  }
+
+  .search__close {
+    display: none;
   }
 }
