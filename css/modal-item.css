@@ -1,0 +1,62 @@
+.overlay_item {
+}
+
+.modal-item {
+  display: flex;
+  gap: 120px;
+}
+
+.modal-item__img {
+  width: 380px;
+  height: 440px;
+  object-fit: cover;
+}
+
+.modal-item__description {
+}
+
+.modal-item__title {
+  font-weight: 400;
+  font-size: 34px;
+  line-height: 1.3;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+}
+
+.modal-item__advantage-list {
+  font-weight: 300;
+  font-size: 18px;
+  color: #4d4d4d;
+}
+
+.modal-item__advantage-item {
+}
+
+.modal-item__text {
+  font-weight: 500;
+}
+
+.mdal-item__article {
+  margin-bottom: 30px;
+}
+
+.modal-item__btn-group {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.modal-item__btn-to-cart {
+  padding: 7px 25px;
+}
+
+.modal-item__btn-to-favorite {
+  background-color: transparent;
+  color: var(--white);
+  border: none;
+  transition: color 0.3s ease-in-out;
+}
+
+.modal-item__btn-to-favorite:hover {
+  color: var(--pink);
+}

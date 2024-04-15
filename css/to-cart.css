@@ -1,0 +1,27 @@
+.to-cart {
+  padding: 8px;
+  font-size: 14px;
+  line-height: calc(17 / 14);
+  font-weight: 500;
+  color: var(--white);
+  border: 1px solid transparent;
+  background-color: var(--main-color);
+  transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out,
+    border-color 0.3s ease-in-out;
+}
+
+.to-cart:hover {
+  background-color: #464343;
+}
+
+.to-cart:active {
+  color: var(--main-color);
+  background-color: var(--white);
+  border-color: var(--main-color);
+}
+
+.to-cart:focus {
+  color: var(--main-color);
+  background-color: var(--light);
+  border-color: var(--main-color);
+}

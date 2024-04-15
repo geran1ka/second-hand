@@ -1,0 +1,30 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  display: none;
+  z-index: 99;
+  overflow: auto;
+  background: rgba(27, 26, 27, 0.7);
+}
+
+.overlay_active {
+  display: flex;
+}
+
+.overlay__modal {
+  margin: auto;
+  background-color: #fff;
+  padding: 80px 150px;
+  box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.15);
+  border-radius: 20px;
+  position: relative;
+}
+
+.overlay__btn-close {
+  background-color: transparent;
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  top: 30px;
+  right: 30px;
+}
