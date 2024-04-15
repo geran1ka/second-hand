@@ -3,7 +3,6 @@ export const searchControl = ({
   selectorForm,
   classActive,
   selectorClose,
-  breakpoint,
 }) => {
   const btn = document.querySelector(selectorBtn);
   const form = document.querySelector(selectorForm);
@@ -21,10 +20,6 @@ export const searchControl = ({
     btn.type = "button";
   };
 
-  if (document.documentElement.clientWidth > breakpoint) {
-    btn.addEventListener("click", activateForm);
-    close.addEventListener("click", deactivateForm);
-  } else {
-    btn.type = "submit";
-  }
+  btn.addEventListener("click", activateForm);
+  close.addEventListener("click", deactivateForm);
 };
