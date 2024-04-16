@@ -1,3 +1,4 @@
+import { addFavorite } from "./modules/addFavorite.js";
 import { burgerMenu } from "./modules/burgerMenu.js";
 import { controlModal } from "./modules/controllModal.js";
 import { interceptLink } from "./modules/interceptLink.js";
@@ -48,4 +49,8 @@ controlModal({
   classActive: "overlay_active",
   closeSelector: ".modal-item__btn-to-cart, .overlay__btn-close",
 });
+
+addFavorite(".card__favorite-btn", ".goods__list");
+addFavorite(".modal-item__btn-to-favorite");
+
 // document.addEventListener("click", (e) => e.preventDefault());

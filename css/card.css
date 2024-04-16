@@ -37,6 +37,10 @@
   color: var(--pink);
 }
 
+.card__favorite-btn.active {
+  color: royalblue;
+}
+
 .card__control-wrapper {
   display: grid;
   grid-template-columns: 1fr 115px;

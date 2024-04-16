@@ -57,6 +57,20 @@
   transition: color 0.3s ease-in-out;
 }
 
+.modal-item__btn-to-favorite:focus {
+  color: var(--pink);
+  opacity: 0.75;
+}
+
 .modal-item__btn-to-favorite:hover {
   color: var(--pink);
+  opacity: 0.5;
+}
+
+.modal-item__btn-to-favorite:active {
+  color: var(--pink);
+}
+
+.modal-item__btn-to-favorite.active {
+  color: royalblue;
 }
