@@ -50,7 +50,17 @@ controlModal({
   closeSelector: ".modal-item__btn-to-cart, .overlay__btn-close",
 });
 
-addFavorite(".card__favorite-btn", ".goods__list");
-addFavorite(".modal-item__btn-to-favorite");
+addFavorite({
+  linkFavoriteHandler: ".header__btn_favorite",
+  targetSelector: ".card__favorite-btn",
+  parentSelector: ".goods__list",
+  changeActiveClass: "",
+});
+
+addFavorite({
+  linkFavoriteHandler: ".header__btn_favorite",
+  targetSelector: ".modal-item__btn-to-favorite",
+  changeActiveClass: ".card__favorite-btn",
+});
 
 // document.addEventListener("click", (e) => e.preventDefault());

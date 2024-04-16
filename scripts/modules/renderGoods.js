@@ -1,6 +1,9 @@
+import { getStorage } from "../service/serviceStorage.js";
 import { URL_API, serviceGoods } from "../service/servisGoods.js";
 
 const createCard = ({ id, title, image, price, discountPrice }) => {
+  const allFavorite = getStorage("favorite");
+
   const li = document.createElement("li");
   li.classList.add("goods__item");
 
@@ -9,7 +12,11 @@ const createCard = ({ id, title, image, price, discountPrice }) => {
     `
       <article class="card goods__card">
         <img class="card__img" src="${image}" alt="${title}" />
-        <button class="card__favorite-btn" data-id="${id}">
+        <button class="${
+          allFavorite.includes(id)
+            ? "card__favorite-btn active"
+            : "card__favorite-btn "
+        }" data-id="${id}">
           <svg width="28" height="24">
             <use xlink:href="#heart" />
           </svg>
