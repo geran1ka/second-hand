@@ -2,7 +2,7 @@ export const getStorage = (key) => {
   return localStorage.getItem(key) ? JSON.parse(localStorage.getItem(key)) : [];
 };
 
-const setStorage = (key, data) => {
+export const setStorage = (key, data) => {
   localStorage.setItem(key, JSON.stringify(data));
 };
 

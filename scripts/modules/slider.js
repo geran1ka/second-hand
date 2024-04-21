@@ -36,9 +36,10 @@ export const slider = ({
   });
 
   const checkSlider = () => {
-    const href = location.href;
+    const regExp = /\?(search|category|list)=/;
 
-    if (href.includes("?")) {
+    const href = location.href;
+    if (regExp.test(href)) {
       swiper.disable();
       document.querySelector(selectorParentSlider)?.remove();
     } else {

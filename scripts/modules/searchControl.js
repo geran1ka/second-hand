@@ -1,9 +1,12 @@
+import { renderGoods } from "./renderGoods.js";
+
 export const searchControl = ({
   selectorBtn,
   selectorForm,
   classActive,
   selectorClose,
   breakpoint,
+  cb,
 }) => {
   const btn = document.querySelector(selectorBtn);
   const form = document.querySelector(selectorForm);
@@ -27,4 +30,16 @@ export const searchControl = ({
   } else {
     btn.type = "submit";
   }
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const searchUrl = `?search=${form.search.value}`;
+    history.pushState(
+      searchUrl.substring(1),
+      searchUrl.substring(1),
+      searchUrl
+    );
+    renderGoods(searchUrl);
+    cb();
+  });
 };

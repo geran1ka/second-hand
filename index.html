@@ -132,8 +132,8 @@
           </div>
         </nav>
         <div class="header__search">
-          <form action="#" class="search">
-            <input class="search__input" type="search" required />
+          <form action="index.html" class="search">
+            <input class="search__input" type="search" name="search" required />
             <button class="search__btn" type="button">
               <svg
                 class="search__svg"
@@ -738,7 +738,7 @@
             <g opacity="0.4" clip-path="url(#clip0_250_1937)">
               <path
                 d="M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41Z"
-                fill="#272727"
+                fill="currentColor"
               />
             </g>
             <defs>
@@ -805,8 +805,28 @@
     </div>
 
     <div class="overlay overlay_cart" hidden>
-      <div class="overlay__modal">
-        <button class="overlay__btn-close"></button>
+      <div class="overlay__modal overlay__modal_cart" >
+        <button class="overlay__btn-close">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g opacity="0.4" clip-path="url(#clip0_250_1937)">
+              <path
+                d="M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41Z"
+                fill="currentColor"
+              />
+            </g>
+            <defs>
+              <clipPath id="clip0_250_1937">
+                <rect width="24" height="24" fill="white" />
+              </clipPath>
+            </defs>
+          </svg>
+        </button>
         <form class="modal-cart">
           <ul class="modal-cart__list">
             <li class="modal-cart__item">
@@ -823,9 +843,12 @@
 
                   <li class="props__item">
                     <h4 class="props__title">Количество</h4>
-                    <button class="props__btn props__btn_minus" type="button">-</button>
-                    <output class="props_count" name="count">2</output>
-                    <button class="props__btn props__btn_plus" type="button">+</button>
+                    <div class="props__description">
+                      <button class="props__btn props__btn_minus" type="button">-</button>
+                      <output class="props_count" name="count">2</output>
+                      <button class="props__btn props__btn_plus" type="button">+</button>
+  
+                    </div>
                   </li>
 
                   <li class="props__item">
@@ -840,19 +863,21 @@
                 </ul>
 
                 </div>
-              </div>
+
             </li>
           </ul>
+
           <div class="modal-cart__footer">
             <p class="modal-cart__total">Итог:
               <output class="modal-cart__total-price" name="total-price">9000</output>
               <span>₽</span>
             </p>
 
-            <button class="modal-cart__submit" type="submit">Оформить заказ</button>
+            <button class="to-cart modal-cart__submit" type="submit">Оформить заказ</button>
 
         </form>
       </div>
+    </div>
     </div>
 
     <svg class="hidden">

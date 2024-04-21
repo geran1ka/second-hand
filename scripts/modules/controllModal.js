@@ -36,6 +36,12 @@ const renderModal = (data) => {
   } else {
     btnToFavorite.classList.remove("active");
   }
+
+  const allCart = getStorage("cart");
+  const itemCart = allCart.find((item) => item.id === data.id);
+  btnToCart.textContent = itemCart
+    ? `${itemCart.count} в корзине`
+    : "В корзину";
 };
 
 export const controlModal = ({
@@ -56,7 +62,12 @@ export const controlModal = ({
       }
     });
   } else {
-    const target = document.querySelector(selectorHandler);
+    const targets = document.querySelectorAll(selectorHandler);
+    targets.forEach((target) =>
+      target.addEventListener("click", () => {
+        modal.classList.add(classActive);
+      })
+    );
   }
 
   modal.addEventListener("click", (e) => {

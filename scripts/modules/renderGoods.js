@@ -3,6 +3,8 @@ import { URL_API, serviceGoods } from "../service/servisGoods.js";
 
 const createCard = ({ id, title, image, price, discountPrice }) => {
   const allFavorite = getStorage("favorite");
+  const allCart = getStorage("cart");
+  const itemCart = allCart.find((item) => item.id === id);
 
   const li = document.createElement("li");
   li.classList.add("goods__item");
@@ -23,7 +25,8 @@ const createCard = ({ id, title, image, price, discountPrice }) => {
         </button>
         <div class="card__control-wrapper">
           <h3 class="card__title">${title}</h3>
-          <button class="to-cart" data-id="${id}">В корзину</button>
+          <button class="to-cart card__to-cart" data-id="${id}">
+            ${itemCart ? `${itemCart.count} в корзине` : "В корзину"}</button>
           <p class="card__price">
           ${
             discountPrice

@@ -1,3 +1,4 @@
+import { controllCart } from "./modules/addCart.js";
 import { addFavorite } from "./modules/addFavorite.js";
 import { burgerMenu } from "./modules/burgerMenu.js";
 import { controlModal } from "./modules/controllModal.js";
@@ -12,14 +13,6 @@ burgerMenu({
   selectorMenu: ".navigation",
   classActive: "navigation_active",
   selectorClose: ".navigation__link, .header__btn",
-});
-
-searchControl({
-  selectorBtn: ".search__btn",
-  selectorForm: ".search",
-  classActive: "search_active",
-  selectorClose: ".search__close",
-  breakpoint: 760,
 });
 
 selectControl({
@@ -37,6 +30,15 @@ const checkSlider = slider({
   bulletActiveClass: "hero__slider-line_active",
 });
 
+searchControl({
+  selectorBtn: ".search__btn",
+  selectorForm: ".search",
+  classActive: "search_active",
+  selectorClose: ".search__close",
+  breakpoint: 760,
+  cb: checkSlider,
+});
+
 renderGoods(location.search, () => {
   document.body.style.opacity = "1";
 });
@@ -50,6 +52,13 @@ controlModal({
   closeSelector: ".modal-item__btn-to-cart, .overlay__btn-close",
 });
 
+controlModal({
+  selectorHandler: ".header__btn_cart",
+  selectorModal: ".overlay_cart",
+  classActive: "overlay_active",
+  closeSelector: ".overlay__btn-close",
+});
+
 addFavorite({
   linkFavoriteHandler: ".header__btn_favorite",
   targetSelector: ".card__favorite-btn",
@@ -61,6 +70,21 @@ addFavorite({
   linkFavoriteHandler: ".header__btn_favorite",
   targetSelector: ".modal-item__btn-to-favorite",
   changeActiveClass: ".card__favorite-btn",
+});
+
+controllCart({
+  selectorAdd: ".card__to-cart",
+  selectorParent: ".goods__list",
+  text: `{count} в корзине`,
+});
+
+controllCart({
+  selectorAdd: ".modal-item__btn-to-cart",
+  text: `{count} в корзине`,
+  selectorText: {
+    selector: ".card__to-cart",
+    text: `{count} в корзине`,
+  },
 });
 
 // document.addEventListener("click", (e) => e.preventDefault());

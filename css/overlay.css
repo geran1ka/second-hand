@@ -27,4 +27,18 @@
   height: 24px;
   top: 30px;
   right: 30px;
+  color: var(--main-color);
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.overlay__btn-close:hover {
+  opacity: 0.5;
+}
+
+.overlay__btn-close:active {
+  transform: scale(1.2) rotate(180deg);
+}
+
+.overlay__modal_cart {
+  padding: 60px 100px;
 }

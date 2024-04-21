@@ -1,0 +1,50 @@
+.props {
+  display: flex;
+  gap: 30px;
+  justify-content: space-between;
+}
+
+.props__item {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: center;
+}
+
+.props__title {
+  font-weight: 300;
+  font-size: 16px;
+  text-align: center;
+  margin-bottom: 6px;
+  line-height: calc(20 / 16);
+}
+
+.props__description {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: calc(20 / 16);
+}
+
+.props__btn {
+  width: 14px;
+  height: 14px;
+  background-color: transparent;
+  border-radius: 100%;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.15);
+  border: none;
+  line-height: 0;
+}
+
+.props__btn_minus {
+}
+
+.props_count {
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.props__btn_plus {
+}
