@@ -7,6 +7,7 @@ import { renderGoods } from "./modules/renderGoods.js";
 import { searchControl } from "./modules/searchControl.js";
 import { selectControl } from "./modules/selectControl.js";
 import { slider } from "./modules/slider.js";
+import { renderCart } from "./service/renderCart.js";
 
 burgerMenu({
   selectorBtn: ".navigation__btn",
@@ -57,6 +58,7 @@ controlModal({
   selectorModal: ".overlay_cart",
   classActive: "overlay_active",
   closeSelector: ".overlay__btn-close",
+  callback: renderCart,
 });
 
 addFavorite({
@@ -85,6 +87,17 @@ controllCart({
     selector: ".card__to-cart",
     text: `{count} в корзине`,
   },
+});
+
+controllCart({
+  selectorAdd: ".props__btn_plus",
+  selectorParent: ".modal-cart__list",
+  selectorRemove: ".props__btn_minus",
+  selectorText: {
+    selector: ".card__to-cart",
+    text: `{count} в корзине`,
+  },
+  callback: renderCart,
 });
 
 // document.addEventListener("click", (e) => e.preventDefault());

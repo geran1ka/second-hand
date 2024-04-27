@@ -50,6 +50,7 @@ export const controlModal = ({
   selectorModal,
   classActive,
   closeSelector,
+  callback,
 }) => {
   const modal = document.querySelector(selectorModal);
   if (selectorParent) {
@@ -58,6 +59,7 @@ export const controlModal = ({
       const target = e.target.closest(selectorHandler);
       if (target) {
         await serviceGoods(renderModal, `/${target.dataset.id}`);
+        if (callback) callback();
         modal.classList.add(classActive);
       }
     });
@@ -65,6 +67,7 @@ export const controlModal = ({
     const targets = document.querySelectorAll(selectorHandler);
     targets.forEach((target) =>
       target.addEventListener("click", () => {
+        if (callback) callback();
         modal.classList.add(classActive);
       })
     );
